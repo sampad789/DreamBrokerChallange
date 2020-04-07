@@ -1,9 +1,18 @@
-const countingLetters = string => {
-  let newArrayWithLetters = Array.from(string);
+const countingLetters = (string) => {
+  let newArray = [];
 
-  let sortedArray = newArrayWithLetters.sort(); // When sorted the number comes to the beginning of the array
+  // Remove the number and any foreign characters
+  for (var i = 0; i < string.length; i++) {
+    if (
+      string[i] >= String.fromCharCode(65) &&
+      string[i] <= String.fromCharCode(122)
+    ) {
+      newArray.push(string[i]);
+    }
+  }
+  console.log(newArray);
 
-  sortedArray.shift(); // Remove the first index of an array i.e, the number in this case
+  let sortedArray = newArray.sort();
 
   let count = {};
 
@@ -14,7 +23,7 @@ const countingLetters = string => {
   );
 
   //console.log(count)
-  Object.keys(count).forEach(key => {
+  Object.keys(count).forEach((key) => {
     FinalArray.push({ [key]: count[key] });
   });
 

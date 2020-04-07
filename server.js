@@ -22,11 +22,11 @@ app.get("/", (req, res) => {
 app.post("/analyze", (req, res) => {
   let valueExtraction = req.body;
 
-  let changeToArray = Object.keys(req.body).map(i => valueExtraction[i]);
+  let changeToArray = Object.keys(req.body).map((i) => valueExtraction[i]);
 
   let changeToString = changeToArray.join();
 
-  let withSpaces = changeToString.length;
+  let withSpacesLength = changeToString.length;
 
   let withoutSpacesString = changeToString.replace(/ /g, "");
 
@@ -34,16 +34,18 @@ app.post("/analyze", (req, res) => {
 
   let finalWordCount = changeToString.trim().split(/\s+/).length;
 
-  // console.log(finalWordCount);
   let helperResponse = countingLetters(withoutSpacesString);
+
   // Final response
   let response = {
-    textLength: { withSpaces: withSpaces, withoutSpaces: withoutSpacesLength },
+    textLength: {
+      withSpaces: withSpacesLength,
+      withoutSpaces: withoutSpacesLength,
+    },
     wordcount: finalWordCount,
-    characterCount: helperResponse
+    characterCount: helperResponse,
   };
   res.json(response);
-  res.end("heelo");
 });
 
 // Define a port to run a server on or a deploy env port
