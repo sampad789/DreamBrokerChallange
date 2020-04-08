@@ -10,7 +10,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 // Importing a helperFunction
-const countingLetters = require("./helpers");
+const { countingLetters } = require("./helpers");
 
 // created the homepage route at '/'
 app.get("/", (req, res) => {
