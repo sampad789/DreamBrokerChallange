@@ -32,4 +32,4 @@ const countingLetters = (string) => {
   return finalSpread;
 };
 
-module.exports = countingLetters;
+module.exports = { countingLetters: countingLetters };

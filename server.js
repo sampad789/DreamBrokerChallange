@@ -34,7 +34,9 @@ app.post("/analyze", (req, res) => {
 
   let finalWordCount = changeToString.trim().split(/\s+/).length;
 
-  let helperResponse = countingLetters(withoutSpacesString);
+  // Changed the string to lowercase because no instructions were there if it was case-sensitive
+
+  let helperResponse = countingLetters(withoutSpacesString.toLowerCase());
 
   // Final response
   let response = {
