@@ -5,8 +5,8 @@ sudo: false
 node_js:
   - 10.15.1
 
-  install : 
-    - npm ci
+install:
+  - npm ci
 
-  script:
-    - npm test 
+script:
+  - npm test
