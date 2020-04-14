@@ -14,7 +14,7 @@ const { countingLetters } = require("./helpers");
 
 // created the homepage route at '/'
 app.get("/", (req, res) => {
-  res.send("you just hit the home page");
+  res.send("you just hit the home page ");
 });
 
 // Creating a post route on analyze
@@ -32,7 +32,10 @@ app.post("/analyze", (req, res) => {
 
   let withoutSpacesLength = withoutSpacesString.length;
 
-  let finalWordCount = changeToString.trim().split(/\s+/).length;
+  let finalWordCount = changeToString
+    .trim()
+    .split(/\s+/)
+    .filter((v) => v != "").length;
 
   // Changed the string to lowercase because no instructions were there if it was case-sensitive
 
