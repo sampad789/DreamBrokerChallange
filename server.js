@@ -14,7 +14,7 @@ const { countingLetters } = require("./helpers");
 
 // created the homepage route at '/'
 app.get("/", (req, res) => {
-  res.send("you just hit the home page/n");
+  res.send("you just hit the home page");
 });
 
 // Creating a post route on analyze
@@ -44,7 +44,7 @@ app.post("/analyze", (req, res) => {
       withSpaces: withSpacesLength,
       withoutSpaces: withoutSpacesLength,
     },
-    wordcount: finalWordCount,
+    wordCount: finalWordCount,
     characterCount: helperResponse,
   };
   res.send(response);
