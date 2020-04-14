@@ -14,7 +14,7 @@ const { countingLetters } = require("./helpers");
 
 // created the homepage route at '/'
 app.get("/", (req, res) => {
-  res.send("you just hit the home page\n");
+  res.send("you just hit the home page/n");
 });
 
 // Creating a post route on analyze
@@ -47,7 +47,7 @@ app.post("/analyze", (req, res) => {
     wordcount: finalWordCount,
     characterCount: helperResponse,
   };
-  res.json(response);
+  res.send(response);
 });
 
 // Define a port to run a server on or a deploy env port
