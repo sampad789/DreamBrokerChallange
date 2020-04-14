@@ -10,7 +10,6 @@ const countingLetters = (string) => {
       newArray.push(string[i]);
     }
   }
-  console.log(newArray);
 
   let sortedArray = newArray.sort();
 
@@ -26,9 +25,9 @@ const countingLetters = (string) => {
   Object.keys(count).forEach((key) => {
     FinalArray.push({ [key]: count[key] });
   });
-  let finalSpread = JSON.stringify(FinalArray);
-
-  return finalSpread;
+  //let finalSpread = JSON.stringify(FinalArray);
+  console.log(FinalArray);
+  return FinalArray;
 };
 
 module.exports = { countingLetters: countingLetters };
