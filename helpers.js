@@ -25,8 +25,7 @@ const countingLetters = (string) => {
   Object.keys(count).forEach((key) => {
     FinalArray.push({ [key]: count[key] });
   });
-  //let finalSpread = JSON.stringify(FinalArray);
-  console.log(FinalArray);
+
   return FinalArray;
 };
 
